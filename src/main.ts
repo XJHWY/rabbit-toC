@@ -1,0 +1,10 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import "@/assets/styles/variables.less";
+import "normalize.css";
+import "@/assets/styles/mixins.less";
+import "@/assets/styles/common.less";
+const app = createApp(App);
+app.use(router);
+app.mount("#app");
