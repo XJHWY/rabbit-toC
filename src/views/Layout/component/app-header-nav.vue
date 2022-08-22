@@ -10,7 +10,8 @@
             <div class="layer" :class="{ open: item.open }">
                 <ul>
                     <li v-for="i in item.children" :key="i.id">
-                        <router-link :to="'/category/sub' + i.id" @click="store.category.hide(item.id)">
+                        <router-link :to="'/category/sub' + i.id" @click="store.category.hide(item.id)"
+                            @mouseleave="store.category.hide(item.id)">
                             <img :src="i.picture" alt="" />
                             <p>{{ i.name }}</p>
                         </router-link>
