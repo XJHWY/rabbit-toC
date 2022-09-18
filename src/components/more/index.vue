@@ -1,0 +1,43 @@
+<script lang="ts" setup name="XtxMore">
+// ts的泛型接口写法
+// <{ path: string }> 指定有一个必须有的属性叫Path类型是string 
+// const { path = '/' } 默认值是 / 
+const { path = '/' } = defineProps<{ path: string }>()
+</script>
+<template>
+    <RouterLink :to="path" class="xtx-more">
+        <span>
+            <slot>查看全部</slot>
+        </span>
+        <i class="iconfont icon-angle-right"></i>
+    </RouterLink>
+</template>
+
+<style scoped lang="less">
+.xtx-more {
+    margin-bottom: 2px;
+
+    span {
+        font-size: 16px;
+        vertical-align: middle;
+        margin-right: 4px;
+        color: #999;
+    }
+
+    i {
+        font-size: 14px;
+        vertical-align: middle;
+        position: relative;
+        top: 2px;
+        color: #ccc;
+    }
+
+    &:hover {
+
+        span,
+        i {
+            color: @xtxColor;
+        }
+    }
+}
+</style>

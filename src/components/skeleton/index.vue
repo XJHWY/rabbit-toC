@@ -1,31 +1,5 @@
 <script lang="ts" setup name="XtxSkeleton">
-defineProps({
-    //骨架的背景颜色
-    bg: {
-        type: String,
-        default: '#efefef',
-    },
-    //宽
-    width: {
-        type: Number,
-        required: true,
-    },
-    //高
-    height: {
-        type: Number,
-        required: true,
-    },
-    // 是否是有动画
-    animated: {
-        type: Boolean,
-        default: false,
-    },
-    //是否开启过渡
-    fade: {
-        type: Boolean,
-        default: false,
-    },
-})
+const { bg = '#efefef', width, height, animated, fade } = defineProps<{ bg: string, width: number, height: number, animated: boolean, fade: boolean }>()
 </script>
 <template>
     <div class="xtx-skeleton" :style="{ width: width + 'px', height: height + 'px' }"
